@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "generators": {
+    "setup-vite-mf": {
+      "factory": "./src/generators/setup-vite-mf/generator",
+      "schema": "./src/generators/setup-vite-mf/schema.json",
+      "description": "Sets up Vite and Module Federation for a project."
+    }
+  }
+} 

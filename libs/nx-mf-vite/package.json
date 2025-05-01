@@ -1,0 +1,50 @@
+{
+  "name": "@91life/nx-mf-vite",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "development": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "generators": "./generators.json",
+  "nx": {
+    "targets": {
+      "build": {
+        "executor": "@nx/js:tsc",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "options": {
+          "outputPath": "libs/nx-mf-vite/dist",
+          "main": "libs/nx-mf-vite/src/index.ts",
+          "tsConfig": "libs/nx-mf-vite/tsconfig.lib.json",
+          "rootDir": "libs/nx-mf-vite/src",
+          "generatePackageJson": false,
+          "assets": [
+            {
+              "input": "./libs/nx-mf-vite/src",
+              "glob": "**/!(*.ts)",
+              "output": "."
+            },
+            {
+              "input": "./libs/nx-mf-vite/src",
+              "glob": "**/*.d.ts",
+              "output": "."
+            }
+          ]
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

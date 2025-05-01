@@ -1,0 +1,57 @@
+{
+  "name": "borealis",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/borealis/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/borealis"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "borealis:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "borealis:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "borealis:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "borealis:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "borealis:build:development"
+        },
+        "production": {
+          "buildTarget": "borealis:build:production"
+        }
+      }
+    }
+  }
+} 

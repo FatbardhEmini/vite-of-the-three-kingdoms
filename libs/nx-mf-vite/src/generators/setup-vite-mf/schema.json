@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "NxMfViteSetupViteMf",
+  "title": "Setup Vite and Module Federation",
+  "type": "object",
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "The name of the target application.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "Which project should be configured?"
+    },
+    "type": {
+      "type": "string",
+      "description": "The type of Module Federation configuration (host or remote).",
+      "enum": ["host", "remote"],
+      "x-prompt": "What type of configuration is this (host or remote)?"
+    }
+  },
+  "required": ["project", "type"]
+} 
