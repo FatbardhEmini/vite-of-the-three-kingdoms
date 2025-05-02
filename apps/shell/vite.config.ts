@@ -12,7 +12,7 @@ export default defineConfig(() => ({
     host: 'localhost',
   },
   preview: {
-    port: 4300,
+    port: 3000,
     host: 'localhost',
   },
   plugins: [
@@ -24,7 +24,10 @@ export default defineConfig(() => ({
         borealis: 'http://localhost:3002/assets/remoteEntry.js',
         cygnus: 'http://localhost:3003/assets/remoteEntry.js',
       },
-      shared: ['react', 'react-dom'],
+      shared: {
+        react: { singleton: true, eager: true },
+        'react-dom': { singleton: true, eager: true },
+      },
     }),
   ],
   // Uncomment this if you are using workers.

@@ -11,7 +11,7 @@ export default defineConfig(() => ({
     host: 'localhost',
   },
   preview: {
-    port: 4300,
+    port: 3003,
     host: 'localhost',
   },
   plugins: [
