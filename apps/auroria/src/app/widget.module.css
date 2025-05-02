@@ -1,21 +1,77 @@
 .card {
-  border: 1px solid #007bff;
-  border-radius: 8px;
-  padding: 15px;
-  margin: 10px;
-  background-color: #e7f3ff;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  width: 250px; /* Give cards a fixed width */
-  text-align: center;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
 }
 
 .card h2 {
-  color: #0056b3;
-  margin-top: 0;
-  font-size: 1.2em;
+  color: #333;
+  margin: 0;
+  font-size: 1.3em;
 }
 
 .card p {
+  color: #666;
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+
+.cardActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.actionButton {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f0f0f0;
   color: #333;
-  font-size: 0.9em;
-} 
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.actionButton:hover {
+  background-color: #e0e0e0;
+}
+
+.badge {
+  background-color: #ff6b6b;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+}
+
+.expandedContent {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+}
+
+/* Auroria specific styles */
+.auroriaCard {
+  border-left: 5px solid #7f5ad8;
+  background-color: #f5f0ff;
+}

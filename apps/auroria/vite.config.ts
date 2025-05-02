@@ -38,6 +38,7 @@ export default defineConfig(() => ({
     outDir: './dist',
     reportCompressedSize: true,
     commonjsOptions: { transformMixedEsModules: true },
+    cssCodeSplit: false
   },
   test: {
     watch: false,

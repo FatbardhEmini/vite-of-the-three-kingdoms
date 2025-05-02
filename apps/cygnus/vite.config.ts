@@ -40,6 +40,7 @@ export default defineConfig(() => ({
     commonjsOptions: {
       transformMixedEsModules: true,
     },
+    cssCodeSplit: false
   },
   test: {
     watch: false,

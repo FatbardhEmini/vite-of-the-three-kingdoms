@@ -3,6 +3,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 import federation from '@originjs/vite-plugin-federation';
+
 export default defineConfig(() => ({
   root: __dirname,
   cacheDir: '../../node_modules/.vite/apps/shell',
@@ -23,10 +24,7 @@ export default defineConfig(() => ({
         borealis: 'http://localhost:3002/assets/remoteEntry.js',
         cygnus: 'http://localhost:3003/assets/remoteEntry.js',
       },
-      shared: {
-        react: { singleton: true, eager: true },
-        'react-dom': { singleton: true, eager: true },
-      },
+      shared: ['react', 'react-dom'],
     }),
   ],
   // Uncomment this if you are using workers.
@@ -34,6 +32,7 @@ export default defineConfig(() => ({
   //  plugins: [ nxViteTsPaths() ],
   // },
   build: {
+    target: 'esnext',
     outDir: './dist',
     emptyOutDir: true,
     reportCompressedSize: true,
